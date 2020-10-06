@@ -20,7 +20,7 @@ class RealBrowserLocust(User):
     screen_height = None
 
     def __init__(self):
-        super(RealBrowserLocust, self).__init__()
+        super().__init__()
         if self.screen_width is None:
             raise LocustError("You must specify a screen_width "
                               "for the browser")
@@ -53,7 +53,7 @@ class HeadlessChromeLocust(RealBrowserLocust):
     Provides a headless Chrome webdriver that logs GET's and waits to locust
     """
     def __init__(self):
-        super(HeadlessChromeLocust, self).__init__()
+        super().__init__()
         options = webdriver.ChromeOptions()
         options.add_argument('headless')
         options.add_argument('window-size={}x{}'.format(
