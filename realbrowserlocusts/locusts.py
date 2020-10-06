@@ -18,6 +18,7 @@ class RealBrowserLocust(User):
     timeout = 30
     screen_width = None
     screen_height = None
+    abstract = True
 
     def __init__(self):
         super().__init__()
@@ -34,6 +35,7 @@ class ChromeLocust(RealBrowserLocust):
     """
     Provides a Chrome webdriver that logs GET's and waits to locust
     """
+    abstract = True
     def __init__(self):
         super(ChromeLocust, self).__init__()
         options = webdriver.ChromeOptions()
